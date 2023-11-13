@@ -94,7 +94,7 @@ form input{
     background: #FAFAFC;
 
     color: var(--backgroud-header);
-    font: 16px 'Poppins', sans-serif;
+    font: 14px 'Poppins', sans-serif;
 }
 
 form label{
@@ -168,7 +168,7 @@ form textarea{
     border-radius: 8px;
     border: 1px solid #E6E6F0;
     padding: 20px;
-    margin: 8px 0 15px;
+    margin: 8px 0 30px;
 
     background: #FAFAFC;
 
@@ -176,27 +176,46 @@ form textarea{
     font: 16px 'Poppins', sans-serif;
 }
 
-#validation{
+#checkvalid input{
+    display: inline-block;
+    position: absolute;
+
     width: 24px;
-    height: 23px;
-    /* opacity: 0 ; */
+    height: 24px;
+
+    opacity: 0;
 }
 
-/* #validat::before{
-    content: '';
-    background-image: url("data:image/svg+xml,%3Csvg width='26' height='26' viewBox='0 0 26 26' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 9C1 4.58172 4.58172 1 9 1H17C21.4183 1 25 4.58172 25 9V16.798C25 21.2163 21.4183 24.798 17 24.798H9C4.58172 24.798 1 21.2163 1 16.798V9Z' fill='%23FAFAFC' stroke='%23E6E6F0'/%3E%3C/svg%3E%0A");
-    
-    position: absolute;
-    width: 24px;
-    height: 23px;
-} */
-
-#validat{
+#checkvalid label{
     display: flex;
-    flex-direction: row;
     align-items: center;
+
     gap: 8px;
 }
+
+#checkvalid label::before{
+    content: '';
+    border: 1px solid #E6E6F0;
+    border-radius: 8px;
+
+
+
+    position: relative;
+    width: 24px;
+    height: 24px;
+}
+
+#checkvalid input:checked + label::before{
+    background-image: url("data:image/svg+xml,%3Csvg width='18' height='14' viewBox='0 0 18 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 11.17L1.83 7L0.410004 8.41L6 14L18 2L16.59 0.589996L6 11.17Z' fill='%2342D3FF'/%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+#checkvalid input:focus + label::before{
+    outline: 2px solid black;
+}
+
 
 #col-3{
     display: flex;
@@ -207,6 +226,7 @@ form textarea{
 #col-3 input{
     display: flex;
     flex-direction: row;
+    
 
     padding: 0 20px 0 30px
 }
@@ -218,7 +238,6 @@ form textarea{
 
 #col-3 div:nth-child(2) input, #col-3 div:nth-child(3) input{
     width: 140px;
-    gap: 10x;
 }
 
 #col-3 div:nth-child(2) input{
